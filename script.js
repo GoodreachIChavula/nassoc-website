@@ -1,26 +1,30 @@
-// Updated script.js for improved selectors and hamburger menu functionality
+// Mobile menu toggle functionality
+const menuToggle = document.getElementById('menuToggle');
+const navMenu = document.getElementById('navMenu');
+const navLinks = navMenu.querySelectorAll('a');
 
-const menuToggle = document.querySelector('.menu-toggle');
-const navMenu = document.querySelector('.nav-menu');
-
-// Function to toggle the navigation menu
-const toggleMenu = () => {
+// Toggle menu when hamburger is clicked
+menuToggle.addEventListener('click', () => {
     navMenu.classList.toggle('active');
-};
+});
 
-// Event listener for menu toggle click
-menuToggle.addEventListener('click', toggleMenu);
+// Close menu when a link is clicked
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+    });
+});
 
-// Keyboard support for closing the menu with the Escape key
-document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape') {
+// Close menu when clicking outside
+document.addEventListener('click', (e) => {
+    if (!navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
         navMenu.classList.remove('active');
     }
 });
 
-// Close the menu when clicking outside of it
-document.addEventListener('click', (event) => {
-    if (!navMenu.contains(event.target) && !menuToggle.contains(event.target)) {
+// Close menu when pressing Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
         navMenu.classList.remove('active');
     }
 });
