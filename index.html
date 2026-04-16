@@ -3,27 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nassoc Website</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>NASSOC - NatureSync Solutions Consulting</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-        <button class="menu-toggle" id="menuToggle">Menu</button>
-        <nav class="nav-menu" id="navMenu">
-            <ul>
-                <li><a href="#home">Home</a></li>
+    <nav>
+        <div class="nav-content">
+            <h1 class="logo">NASSOC</h1>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+            <ul class="nav-menu" id="navMenu">
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-        </nav>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>NatureSync Solutions Consulting</h1>
+            <p>Climate-smart agriculture • Environmental solutions • Social development</p>
+        </div>
     </header>
 
-    <main>
-        <h1>Welcome to the Nassoc Website</h1>
-        <p>This is a sample content area.</p>
-    </main>
+    <section id="about" class="container">
+        <h2>About Us</h2>
+        <p>
+            NatureSync Solutions Consulting (NASSOC) is a multidisciplinary consulting firm
+            specializing in climate-smart agriculture, environmental conservation, water resource
+            management, and social development.
+        </p>
+        <p>
+            We work with NGOs, government institutions, private sector actors, and communities
+            to deliver practical, evidence-based, and sustainable solutions.
+        </p>
+    </section>
+
+    <section id="services" class="container">
+        <h2>Core Services</h2>
+        <div class="cards">
+            <div class="card">Climate-Smart Agriculture</div>
+            <div class="card">Deep Bed Farming Systems</div>
+            <div class="card">Water Resource Management</div>
+            <div class="card">Environmental Conservation</div>
+            <div class="card">Social Research & Assessments</div>
+            <div class="card">Training & Capacity Building</div>
+        </div>
+    </section>
+
+    <section class="container">
+        <h2>Our Approach</h2>
+        <p>
+            We use participatory, evidence-based, and systems-thinking approaches that integrate
+            environmental, social, and agricultural solutions. Our work focuses on practical,
+            community-driven impact and long-term sustainability.
+        </p>
+    </section>
+
+    <section class="container">
+        <h2>Who We Work With</h2>
+        <p>
+            NGOs • Government Agencies • Development Partners • Agribusinesses • Community Organizations
+        </p>
+    </section>
+
+    <section id="contact" class="container">
+        <h2>Contact</h2>
+        <p><strong>CEO:</strong> Isaac Monjo Chavula</p>
+        <p>Email: isaacchavulamonjo@yahoo.com</p>
+        <p>Phone: +265 999 207400</p>
+        <p>Location: Mzuzu, Malawi</p>
+    </section>
+
+    <footer>
+        <p>© 2026 NASSOC</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
