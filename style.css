@@ -1,175 +1,89 @@
-* {
-    margin: 0;
-    padding: 0;
+.site-container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
     box-sizing: border-box;
 }
 
-:root {
-    --primary: #2d7a3e;
-    --primary-dark: #1f5a2e;
-    --accent: #f39c12;
-    --light-bg: #f8f9f7;
-    --text-dark: #1a1a1a;
-    --text-light: #666;
-    --border-color: #e0e0e0;
-}
-
-body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    color: var(--text-dark);
-    background: #fff;
-    line-height: 1.6;
-}
-
-/* NAV */
-nav {
-    position: fixed;
-    width: 100%;
-    background: #fff;
-    border-bottom: 2px solid var(--primary);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    z-index: 1000;
-}
-
-.nav-content {
+.header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 40px;
-    max-width: 1200px;
-    margin: auto;
+    padding: 10px;
+    background-color: #333;
 }
 
-.logo {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: var(--primary);
-}
-
-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 30px;
-}
-
-nav a {
-    text-decoration: none;
-    color: var(--text-dark);
-    font-weight: 500;
-    transition: color 0.3s ease;
-}
-
-nav a:hover {
-    color: var(--primary);
-}
-
-/* HERO */
-.hero {
-    height: 90vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding-top: 60px;
-    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-    color: white;
-}
-
-.hero h1 {
-    font-size: 3.2rem;
-    margin-bottom: 15px;
-    font-weight: 600;
-}
-
-.hero p {
-    font-size: 1.2rem;
-    opacity: 0.95;
-    max-width: 600px;
-    margin: auto;
-}
-
-/* LAYOUT */
-.container {
-    max-width: 1000px;
-    margin: auto;
-    padding: 100px 40px;
-}
-
-h2 {
-    font-size: 2rem;
-    margin-bottom: 30px;
-    color: var(--primary);
-    border-bottom: 3px solid var(--accent);
-    padding-bottom: 15px;
-    display: inline-block;
-}
-
-section {
-    scroll-margin-top: 80px;
-}
-
-section p {
-    color: var(--text-light);
-    font-size: 1.05rem;
-    margin-bottom: 15px;
-}
-
-/* CARDS */
-.cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
-    margin-top: 30px;
-}
-
-.card {
-    padding: 30px;
-    background: var(--light-bg);
-    border: 2px solid transparent;
-    border-radius: 12px;
-    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    font-weight: 500;
-    font-size: 1.05rem;
-    color: var(--text-dark);
+.menu-toggle {
+    display: none;
     cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
-.card:hover {
-    transform: translateY(-8px);
-    border-color: var(--primary);
-    box-shadow: 0 12px 24px rgba(45, 122, 62, 0.15);
-    background: linear-gradient(135deg, rgba(45, 122, 62, 0.05), rgba(243, 156, 18, 0.05));
+.menu {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
 }
 
-/* FOOTER */
-footer {
-    text-align: center;
-    padding: 40px;
-    background: var(--primary);
-    color: white;
-    margin-top: 50px;
+.menu li {
+    margin: 0 10px;
 }
 
-/* RESPONSIVE */
 @media (max-width: 768px) {
-    .nav-content {
-        padding: 15px 20px;
+    .menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #333;
+        position: absolute;
+        top: 60px;
+        left: 0;
     }
-
-    nav ul {
-        gap: 15px;
+    .menu.show {
+        display: flex;
     }
-
-    .hero h1 {
-        font-size: 2rem;
+    .menu-toggle {
+        display: block;
+        background-color: #333;
+        color: white;
+        padding: 10px;
     }
+}
 
-    .container {
-        padding: 60px 20px;
+@media (max-width: 480px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
     }
+    .menu li {
+        margin: 5px 0;
+    }
+}
 
-    h2 {
-        font-size: 1.5rem;
+@media (max-width: 320px) {
+    .header {
+        padding: 5px;
+    }
+}
+
+body {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 320px) {
+    body {
+        font-size: 10px;
     }
 }
